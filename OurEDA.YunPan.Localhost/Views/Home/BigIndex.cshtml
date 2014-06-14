@@ -1,0 +1,89 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>BigIndex</title>
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="../Scripts/jquery-ui-1.9.2.js"></script>
+    <script src="~/Scripts/jquery.fileupload.js"></script>
+    <script src="~/Scripts/jquery.iframe-transport.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <script type="text/javascript">
+        $(function () {
+            $('#fileupload').fileupload({
+                dataType: "json",
+                url: "/Api/Upload",
+                limitConcurrentUploads: 1,
+                sequentialUploads: true,
+                progressInterval: 100,
+                maxChunkSize: 10000,
+                add: function (e, data) {
+                    $('#filelistholder').removeClass('hide');
+                    data.context = $('<div />').text(data.files[0].name).appendTo('#filelistholder');
+                    $('</div><div class="progress"><div class="bar" style="width:0%"></div></div>').appendTo(data.context);
+                    $('#btnUploadAll').click(function () {
+                        data.submit();
+                    });
+                },
+                done: function (e, data) {
+                    data.context.text(data.files[0].name + '... 上传成功');
+                    $('</div><div class="progress"><div class="bar" style="width:100%"></div></div>').appendTo(data.context);
+                },
+                progressall: function (e, data) {
+                    var progress = parseInt(data.loaded / data.total * 100, 10);
+                    $('#overallbar').css('width', progress + '%');
+                },
+                progress: function (e, data) {
+                    var progress = parseInt(data.loaded / data.total * 100, 10);
+                    data.context.find('.bar').css('width', progress + '%');
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <style>
+            body {
+                padding-top: 60px;
+            }
+        </style>
+        <form action="/api/upload" enctype="multipart/form-data">
+            <div class="row fileupload-buttonbar">
+                <div class="span7">
+                    <div class="well">
+                        <i class="icon-plus"></i><span>&nbsp;&nbsp;添加文件...</span>
+                        <input type="file" id="fileupload" name="fileupload" accept="*" multiple="multiple">
+                        <button id="btnUploadAll" class="btn btn-success pull-right" type="button">
+                            上传所有</button>
+                        <div class="clearfix">
+                        </div>
+
+
+                        <span id="filebut" class="btn btn-success fileinput-button" style="margin-left: 100px; margin-top: 75px; position: absolute;">
+                            <i class="icon-plus icon-white"></i>
+                            <span>打开文件</span>
+                            <input type="file" id="fileupload" name="fileupload" accept="*" multiple="multiple">
+                        </span>
+
+
+
+                    </div>
+                </div>
+                <div class="span7">
+                    <div class="well hide" id="filelistholder">
+                    </div>
+                </div>
+                <div class="span7">
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

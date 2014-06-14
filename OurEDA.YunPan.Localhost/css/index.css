@@ -1,0 +1,178 @@
+﻿@charset "utf-8";
+/* CSS Document */
+body{
+	background-color:#F5F5F5;
+	margin:0px;
+	padding:0px;
+	font-family:Microsoft Yahei !important;
+	color:#FFF !important;
+}
+header{
+	background-color:#3B4A5F !important;
+	color:white !important;
+}
+@media(max-width:768px) {
+    .adword{
+        display:none;
+    }
+}
+@media(max-width:300px) {
+    .ad img{
+	    position:absolute;	
+	    margin-left:10% !important;
+	    margin-right:0%;
+    }
+    .adword,.center{
+	    display:none;
+    }
+    .miniad{
+	    display:inline !important;
+	    color:#999; 
+	    text-align:center;
+    }
+    .myfooter{
+	    position:static;
+	    margin-top:5%;
+    }
+}
+.miniad{
+	display:none;
+}
+.myfooter{
+	color: #999;
+	text-align:center;
+	border-top: 1px solid #e5e5e5;
+	bottom:0px;
+	margin-top:30px;
+	width:100%;
+}
+.ad{
+	width:85.4%;
+	height: 120px;
+	margin: 12px auto 10px auto;
+	position: relative;
+	color:#686868;
+}
+.ad img{
+	margin-left:10%;
+}
+.center{
+	border: dashed 3px #666666;
+	margin-left:auto;
+	margin-right:auto;
+	width:500px;
+	height:auto;
+}
+/*上传框中的提示语言*/
+.suggest{
+	width:495px;
+	height:100px;
+	margin-top:10px;
+	text-align:center;
+	font-size:16px;
+	color:#686868;
+}
+    .suggest #dword + div
+    {
+        margin-top:10px;
+    }
+.downword{
+    width:100px;
+    height:50px;
+    border:none !important; 
+    text-align:center; 
+    z-index:1000; 
+    opacity:0.8;
+    position:absolute; 
+    margin-top:-150px;
+    margin-left:500px; 
+    font-size:22px;
+    color:#A7A7A7 !important;
+}
+.erwei {
+    width:200px;
+    height:50px;
+    border:none !important; 
+    text-align:center; 
+    z-index:1000; 
+    opacity:0.8;
+    position:absolute; 
+    margin-top:-150px;
+    margin-left:-200px; 
+    font-size:22px;
+    color:#A7A7A7 !important;
+}
+.upword{
+    color:#A7A7A7;
+    width:100px;
+    height:50px;
+    border:none !important; 
+    text-align:center; 
+    z-index:1000; 
+    opacity:0.8;
+    position:absolute; 
+    margin-top:-160px;
+    margin-left:-100px; 
+    font-size:22px;
+}
+#warning{
+	color:red;
+    line-height:25px;
+}
+#success{
+	color:#428bca;
+    line-height:25px;
+}
+#remember{
+    color:#428bca;
+    line-height:25px;
+}
+
+#questions h3{
+    color:#686868;
+    margin-top:30px;
+}
+#questions p{
+    font-size:18px;
+    color:#606060;
+}
+
+/*ie兼容类*/
+.iefile{
+    opacity:1 !important;
+    height:35px !important;
+    position:absolute;
+    margin-top:75px;
+    margin-left:30px;
+}
+.iefilebut{
+    display:none !important;
+    margin-left:100px;
+    margin-top:75px;
+    position:absolute;
+}
+/*webuploader*/
+.btns{
+            margin:50px auto;
+            width:200px;
+        }
+        .info
+        {
+            color:black;
+            line-height:30px;
+            margin-left:30px;
+            margin-right:30px;
+            text-align:center;
+        }
+            .info .state
+            {
+                margin-left:20px;
+            }
+            .info .tqm
+            {
+                margin-left:20px;
+            }
+.tqm
+{
+    font-weight:900;
+}

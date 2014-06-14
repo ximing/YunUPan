@@ -1,0 +1,27 @@
+﻿@charset "utf-8";
+/* CSS Document */
+body{
+	background-color:#F5F5F5;
+	margin:0px;
+	padding:0px;
+	font-family:Microsoft Yahei !important;
+	color:color:#686868 !important;
+}
+header{
+	background-color:#3B4A5F !important;
+	color:white !important;
+}
+.myfooter{
+	color: #999;
+	text-align:center;
+	border-top: 1px solid #e5e5e5;
+	bottom:0px;
+	margin-top:30px;
+	width:100%;
+}
+.jumbotron{
+    margin-top:40px;
+}
+hr{
+    border-color:#FFF;
+}

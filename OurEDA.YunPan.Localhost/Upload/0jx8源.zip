@@ -1,0 +1,114 @@
+#include<iostream>
+#include<windows.h>
+#include<conio.h>
+using namespace std;
+
+int H=0, d0=0,d1=0,d2=0;
+int wid[20]={0}, Big=0;
+
+class TreeNode
+{
+public:
+	int s;
+	TreeNode *left, *right;
+	TreeNode(){left=right=0;}
+	~TreeNode(){delete left; delete right;}
+};
+
+TreeNode* Create(TreeNode *root)
+{
+	int s;
+	cin>>s;
+	if(s == -99)
+		return 0;
+	root=new TreeNode;
+	root->s=s;
+	root->left=Create(root->left);
+	root->right=Create(root->right);
+	return root;
+}
+
+void Statistics(TreeNode *k, int h=1)
+{
+	int d=0;
+	if(h>H) H++;
+	if(k->s > Big) Big=k->s;
+	if(k->left) 
+	{
+		Statistics(k->left,h+1);
+		d++;
+	}
+	if(k->right)
+	{
+		Statistics(k->right,h+1);
+		d++;
+	}
+	switch(d)
+	{
+	case 0: d0++; break;
+	case 1: d1++; break;
+	case 2: d2++; break;
+	}
+	wid[h]+=d;
+}
+
+TreeNode* DeleteLeaf(TreeNode *k)
+{
+	if(!(k->left) && !(k->right))
+	{
+		delete k;
+		return 0;
+	}
+	if(k->left) k->left=DeleteLeaf(k->left);
+	if(k->right) k->right=DeleteLeaf(k->right);
+	return k;
+}
+
+void ChangeLR(TreeNode *k)
+{
+	TreeNode *p;
+	p=k->left;
+	k->left=k->right;
+	k->right=p;
+	if(k->left) ChangeLR(k->left);
+	if(k->right) ChangeLR(k->right);
+}
+
+void Print(TreeNode *k)
+{
+	TreeNode *stack[5];
+	int top=-1;
+	top++; stack[top]=k;
+	while(top !=-1)
+	{
+		k=stack[top];
+		top--;
+		cout<<k->s<<"  ";
+		if(k->right)
+		{
+			top++;
+			stack[top]=k->right;
+		}
+		if(k->left)
+		{
+			top++;
+			stack[top]=k->left;
+		}
+	}
+}
+
+int main()  //1 2 3 -99 -99 -99 -99
+{
+	int i;
+	TreeNode *root1;
+	root1=Create(root1);
+	Print(root1);
+	ChangeLR(root1);
+	Print(root1);
+
+	/*wid[0]=1; Big=root1->s;
+	Statistics(root1);
+	cout<<H<<" "<<Big<<" "<<d0<<" "<<d1<<" "<<d2<<"\n";
+	for(i=0; i<20; i++) cout<<wid[i]<<" ";*/
+    return 0;
+}

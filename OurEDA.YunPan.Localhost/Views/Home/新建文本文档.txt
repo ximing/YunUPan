@@ -1,0 +1,1 @@
+<script type="text/javascript" src="http://1.oureda.sinaapp.com/snow/js/snow.js"></script>

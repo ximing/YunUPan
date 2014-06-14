@@ -1,0 +1,123 @@
+﻿@model OurEDA.YunPan.Localhost.Models.FileStore
+
+@{
+    Layout = null;
+}
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="baidu-site-verification" content="qV4HG09G0S" />
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <link href="~/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link href="~/css/index.css" type="text/css" rel="stylesheet">
+    <link href="~/css/style.css" type="text/css" rel="stylesheet">
+    <style>
+        
+    </style>
+    <title>OurEDA微云盘</title>
+</head>
+
+<body>
+    <header class="navbar-default" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse"><span class="sr-only">Click</span> <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+                <a href="http://upan.oureda.cn/" class="navbar-brand"><i class="glyphicon-cloud glyphicon" style="font-size: 24px;"></i>OurEDA</a>
+            </div>
+            <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="http://upan.oureda.cn/">首页</a> </li>
+                    <li><a href="~/Home/Introduce">相关介绍</a> </li>
+                    <li><a href="~/Home/Question">常见问题</a> </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <div class="ad">
+            <img src="~/image/logo.gif" style="float: left; margin-right: 5%;">
+            <div class="adword">
+                <p style="font-size: 22px;">忘带U盘？怕中木马？互传文件传的好慢？</p>
+                <p style="font-size: 20px;">随时上传，随地下载，短短四位，用提取码下载文件</p>
+            </div>
+        </div>
+        <div class="miniad">
+            <p style="font-size: 1.5em;">忘带U盘？怕中木马？</p>
+            <p style="font-size: 1.5em;">互传文件传的好慢？</p>
+            <p style="font-size: 1.25em;">快来用微云盘！</p>
+            <p style="font-size: 1.25em;">随时上传，随地下载，短短四位，用提取码下载文件</p>
+            <p style="font-size: 1.25em;">移动版和平板电脑不支持哦，快快换成电脑吧！</p>
+        </div>
+
+
+        <div class="center" id="uploader">
+
+            <div class="btns">
+                <a id="pp">
+                    <div id="picker">选择文件</div>
+                </a>
+            </div>
+
+            <div id="thelist" class="uploader-list"></div>
+
+
+
+
+
+            <div class="suggest">
+                <p id="dword">*直接用鼠标把文件拖进这个框里也能上传哦 *</p>
+                <div>
+                    <span id="temp"></span><a name="xn_share" onclick="shareClick()" type="button_large" href="javascript:;" style="display: none;" id="srenren"></a>
+                </div>
+                <p id="remember"></p>
+                <p id="warning"></p>
+            </div>
+            <div class="downword">
+                <a href="~/Home/Fdownload"><span>去下载<i class="glyphicon glyphicon-hand-right"></i></span></a>
+            </div>
+            <div class="erwei">
+                <a data-toggle="modal" data-target="#myModal" style="cursor:pointer;" id="erweixiazai"><i class="glyphicon glyphicon-hand-left"></i><span> Orz跪求点一下</span></a>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel" style="color: #000;">感谢大家对微云盘长时间的支持！</h4>
+                </div>
+                <div class="modal-body" style="text-align:left;text-indent:2em;color:#000;">
+                    <p>我们（大连理工大学OurEDA团队）在参加2014年移动互联网创新创业大赛，我们的作品是 “微信控制智能家居”。希望大家能够继续支持我们，为我们投出你宝贵的一票。</p>
+                    <p>【第一步，微信添加朋友搜索“T派”，或者扫描二维码也行，关注它。】</p>
+                    <img style="margin-left:212px;" src="~/image/weixin.jpg" />
+                    <p>【第二步：发送消息“vote 4448” 给它，就行了！】</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">OurEDA最厉害啦！</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+    <footer class="myfooter">
+        <p><a href="http://www.oureda.cn/">OurEDA</a>　Copyright-版权所有　　beta2.0　
+            <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://"); document.write(unescape("%3Cspan id='cnzz_stat_icon_1000186673'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s22.cnzz.com/z_stat.php%3Fid%3D1000186673%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+        </p>
+        <adress>大连理工大学 · 国家示范性软件学院综合楼4层</adress>
+    </footer>
+
+    <script src="~/js/webuploader.js"></script>
+    <script src="~/js/upload.js"></script>
+    <script type="text/javascript" src="http://widget.renren.com/js/rrshare.js"></script>
+</body>
+
+</html>
+

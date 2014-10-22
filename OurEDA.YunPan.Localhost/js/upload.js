@@ -84,6 +84,7 @@ jQuery(function () {
             $('#warning').html("上传遇到了怪怪的问题，再试试吧_(:з」∠)_");
         }
         else {
+            
             $('#srenren').css("display", "inherit");
             $('#erweixiazai').css("display", "inherit");
         }

@@ -13,10 +13,11 @@
     <script src="~/Scripts/jquery-1.8.2.min.js"></script>
     <script src="~/js/bootstrap.min.js"></script>
     <link href="~/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link href="~/js/WebUploader/webuploader.css" rel="stylesheet" />
     <link href="~/css/index.css" type="text/css" rel="stylesheet">
     <link href="~/css/style.css" type="text/css" rel="stylesheet">
     <style>
-        
+
     </style>
     <title>OurEDA微云盘</title>
 </head>
@@ -71,16 +72,19 @@
             <div class="suggest">
                 <p id="dword">*直接用鼠标把文件拖进这个框里也能上传哦 *</p>
                 <div>
-                    <span id="temp"></span><a name="xn_share" onclick="shareClick()" type="button_large" href="javascript:;" style="display: none;" id="srenren"></a>
-                </div>
+                    <span id="temp">
+                    </span>
+                    <a name="xn_share" onclick="shareClick()" type="button_large" href="javascript:;" style="display: none;" id="srenren">
+                    </a>
+                    </div>
                 <p id="remember"></p>
                 <p id="warning"></p>
             </div>
             <div class="downword">
-                <a href="~/Home/Fdownload"><span>去下载<i class="glyphicon glyphicon-hand-right"></i></span></a>
+                <a href="~/Home/DownFileView"><span>去下载<i class="glyphicon glyphicon-hand-right"></i></span></a>
             </div>
             <div class="erwei">
-                <a data-toggle="modal" data-target="#myModal" style="cursor:pointer;" id="erweixiazai"><i class="glyphicon glyphicon-hand-left"></i><span> Orz跪求点一下</span></a>
+                @*<a data-toggle="modal" data-target="#myModal" style="cursor:pointer;" id="erweixiazai"><i class="glyphicon glyphicon-hand-left"></i><span> Orz跪求点一下</span></a>*@
             </div>
         </div>
     </div>
@@ -108,16 +112,16 @@
     </div>
     <!-- /.modal -->
     <footer class="myfooter">
-        <p><a href="http://www.oureda.cn/">OurEDA</a>　Copyright-版权所有　　beta2.0　
+        <p>
+            <a href="http://www.oureda.cn/">OurEDA</a>　Copyright-版权所有　　beta2.0　
             <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://"); document.write(unescape("%3Cspan id='cnzz_stat_icon_1000186673'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s22.cnzz.com/z_stat.php%3Fid%3D1000186673%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
         </p>
         <adress>大连理工大学 · 国家示范性软件学院综合楼4层</adress>
     </footer>
 
-    <script src="~/js/webuploader.js"></script>
+    <script src="~/js/webuploader.min.js"></script>
     <script src="~/js/upload.js"></script>
     <script type="text/javascript" src="http://widget.renren.com/js/rrshare.js"></script>
 </body>
 
 </html>
-

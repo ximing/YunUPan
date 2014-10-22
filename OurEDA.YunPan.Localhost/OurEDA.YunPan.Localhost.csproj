@@ -244,6 +244,9 @@
     <Content Include="js\WebUploader\upload.js" />
     <Content Include="js\WebUploader\Uploader.swf" />
     <Content Include="js\WebUploader\webuploader.css" />
+    <Content Include="js\WebUploader\webuploader.custom.js" />
+    <Content Include="js\WebUploader\webuploader.custom.min.js" />
+    <Content Include="js\WebUploader\webuploader.fis.js" />
     <Content Include="js\WebUploader\webuploader.flashonly.js" />
     <Content Include="js\WebUploader\webuploader.flashonly.min.js" />
     <Content Include="js\WebUploader\webuploader.html5only.js" />
@@ -252,11 +255,8 @@
     <Content Include="js\WebUploader\webuploader.min.js" />
     <Content Include="js\WebUploader\webuploader.withoutimage.js" />
     <Content Include="js\WebUploader\webuploader.withoutimage.min.js" />
+    <Content Include="js\WebUploader\README.md" />
     <None Include="Properties\PublishProfiles\Default Settings.pubxml" />
-    <None Include="Properties\PublishProfiles\ftp.pubxml" />
-    <None Include="Properties\PublishProfiles\Localhost.pubxml" />
-    <None Include="Properties\PublishProfiles\yunduan.pubxml" />
-    <None Include="Properties\PublishProfiles\YunPan.pubxml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="image\logo.gif" />
     <Content Include="image\renrenwyp.jpg" />
@@ -309,6 +309,7 @@
     <Content Include="Views\Home\TextIndex.cshtml" />
     <Content Include="Views\Home\TestWebUploader.cshtml" />
     <Content Include="Views\Default1\Test.cshtml" />
+    <Content Include="Views\Home\DownFileView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

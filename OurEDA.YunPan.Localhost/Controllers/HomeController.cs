@@ -7,9 +7,9 @@ using System.Web;
 using System.Web.Mvc;
 using System.Text;
 using System.Drawing;
-using ZXing.Common;
-using ZXing;
-using ZXing.QrCode;
+//using ZXing.Common;
+//using ZXing;
+//using ZXing.QrCode;
 using System.Threading.Tasks;
 using OurEDA.YunPan.Localhost.Models;
 using OurEDA.YunPan.Localhost.Until;
@@ -413,24 +413,24 @@ namespace MvcWebRole1.Controllers
             return s;
         }
 
-        public ActionResult GerErWM(string randName)
-        {
-            EncodingOptions options = null;
-            BarcodeWriter writer = null;
-            options = new QrCodeEncodingOptions
-            {
-                DisableECI = true,
-                CharacterSet = "UTF-8",
-                Width = 300,
-                Height = 300
-            };
-            writer = new BarcodeWriter();
-            writer.Format = BarcodeFormat.QR_CODE;
-            writer.Options = options;
-            Bitmap bitmap = writer.Write(randName);
-            bitmap.Save(Response.OutputStream, System.Drawing.Imaging.ImageFormat.Jpeg);
-            return null;
-        }
+        //public ActionResult GerErWM(string randName)
+        //{
+        //    EncodingOptions options = null;
+        //    BarcodeWriter writer = null;
+        //    options = new QrCodeEncodingOptions
+        //    {
+        //        DisableECI = true,
+        //        CharacterSet = "UTF-8",
+        //        Width = 300,
+        //        Height = 300
+        //    };
+        //    writer = new BarcodeWriter();
+        //    writer.Format = BarcodeFormat.QR_CODE;
+        //    writer.Options = options;
+        //    Bitmap bitmap = writer.Write(randName);
+        //    bitmap.Save(Response.OutputStream, System.Drawing.Imaging.ImageFormat.Jpeg);
+        //    return null;
+        //}
 
         public string GetFile(string randName)
         {

@@ -1,5 +1,5 @@
 ﻿@charset "utf-8";
-/* CSS Document */
+/* 2014 10 24 */
 body{
 	background-color:#F5F5F5;
 	margin:0px;
@@ -7,10 +7,15 @@ body{
 	font-family:Microsoft Yahei !important;
 	color:#FFF !important;
 }
-header{
+.header{
 	background-color:#3B4A5F !important;
-	color:white !important;
+	color:#FFF !important;
 }
+.header .navbar-brand {position:relative;color:#FFF;text-indent:40px;}
+    .header .navbar-brand i{position:absolute;top:7px;left:-18px;font-size:30px;}
+    .header .navbar-brand:hover{color:#FFF;}
+.ad img{float: left; margin-right: 5%;}
+.ad .adword{float: left;margin-top:20px;}
 @media(max-width:768px) {
     .adword{
         display:none;

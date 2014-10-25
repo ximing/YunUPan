@@ -7,21 +7,43 @@ body{
 	font-family:Microsoft Yahei !important;
 	color:color:#686868 !important;
 }
-header{
+.header{
 	background-color:#3B4A5F !important;
-	color:white !important;
+	color:#FFF !important;
 }
+.header .navbar-brand {position:relative;color:#FFF;text-indent:40px;}
+    .header .navbar-brand i{position:absolute;top:7px;left:-18px;font-size:30px;}
+    .header .navbar-brand:hover{color:#FFF;}
+    .header .navbar-nav > li > a {color:#FFF;font-size:16px;}
+    .header .navbar-nav > li > a:hover {color:#FFF;text-decoration:underline;}
 .myfooter{
 	color: #999;
 	text-align:center;
 	border-top: 1px solid #e5e5e5;
 	bottom:0px;
-	margin-top:30px;
+	margin-top:60px;
+    padding-top:5px;
 	width:100%;
 }
+.myfooter p {line-height:26px;}
+.myfooter p small{font-size:13px;}
+.myfooter address{font-size:15px;}
 .jumbotron{
     margin-top:40px;
 }
+.jumbotron h2{
+    text-align:center;
+}
+.jumbotron p{
+    font-size:1.2em;
+    line-height:1.8em;
+    text-indent:2em;
+    font-weight:normal;
+    position:relative;
+}
+    .jumbotron p img {
+        max-width: 100%;
+    }
 hr{
     border-color:#FFF;
 }

@@ -229,9 +229,11 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="image\20141025.png" />
     <Content Include="image\bg.png" />
     <Content Include="image\image.png" />
     <Content Include="image\weixin.jpg" />
+    <Content Include="js\lee_checkBroswer.js" />
     <Content Include="js\webuploader.js" />
     <Content Include="js\WebUploader\bg.png" />
     <Content Include="js\WebUploader\icons.png" />

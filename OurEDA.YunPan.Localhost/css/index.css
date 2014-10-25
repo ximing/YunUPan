@@ -14,14 +14,40 @@ body{
 .header .navbar-brand {position:relative;color:#FFF;text-indent:40px;}
     .header .navbar-brand i{position:absolute;top:7px;left:-18px;font-size:30px;}
     .header .navbar-brand:hover{color:#FFF;}
-.ad img{float: left; margin-right: 5%;}
-.ad .adword{float: left;margin-top:20px;}
-@media(max-width:768px) {
-    .adword{
+    .header .navbar-nav > li > a {color:#FFF;font-size:16px;}
+    .header .navbar-nav > li > a:hover {color:#FFF;text-decoration:underline;}
+.ad{
+	width:85.4%;
+	height: 120px;
+	margin: 12px auto 10px auto;
+	position: relative;
+	color:#686868;
+}
+.ad img{margin-left:10%;width:180px;float: left; margin-right:3%;}
+.ad .adword p{float: left;margin-top:20px;font-size:20px;font-weight:lighter;}
+.ad .adword p:first-child{font-size:24px;}
+@media(max-width:1000px) {
+    .ad {
+        width:93%;
+    }
+    .ad img {
+        width:150px;
+        margin-left:5%;
+    }
+    .ad .adword p:first-child{font-size:22px;}
+    .ad .adword .second-line {
         display:none;
     }
 }
-@media(max-width:300px) {
+@media(max-width:700px) {
+    .ad .adword {
+        display:none;
+    }
+}
+@media(max-width:400px) {
+    .ad {
+        min-width:initial;
+    }
     .ad img{
 	    position:absolute;	
 	    margin-left:10% !important;
@@ -48,19 +74,13 @@ body{
 	text-align:center;
 	border-top: 1px solid #e5e5e5;
 	bottom:0px;
-	margin-top:30px;
+	margin-top:60px;
+    padding-top:5px;
 	width:100%;
 }
-.ad{
-	width:85.4%;
-	height: 120px;
-	margin: 12px auto 10px auto;
-	position: relative;
-	color:#686868;
-}
-.ad img{
-	margin-left:10%;
-}
+.myfooter p {line-height:26px;}
+.myfooter p small{font-size:13px;}
+.myfooter address{font-size:15px;}
 .center{
 	border: dashed 3px #666666;
 	margin-left:auto;

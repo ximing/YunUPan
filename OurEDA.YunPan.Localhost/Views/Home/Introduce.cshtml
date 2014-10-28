@@ -5,46 +5,58 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=10,IE=9" />
+    <meta name="renderer" content="webkit" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="baidu-site-verification" content="qV4HG09G0S" />
-<link href="~/css/bootstrap.min.css" type="text/css" rel="stylesheet">
-<link href="~/css/introduce.css" type="text/css" rel="stylesheet">
-<title>微云盘-使用介绍</title>
+    <link href="~/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link href="~/css/introduce.css" type="text/css" rel="stylesheet">
+    <title>OurEDA微云盘-使用介绍</title>
 </head>
 
 <body>
-<header class="navbar-default" role="banner">
-  <div class="container">
-    <div class="navbar-header">
-      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse"> <span class="sr-only">Click</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-      <a href="http://upan.oureda.cn/" class="navbar-brand"><i class="glyphicon-cloud glyphicon" style="font-size:24px;"></i>OurEDA</a> 
+    <div class="navbar-default header" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse"> <span class="sr-only">Click</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                <a href="http://upan.oureda.cn/" class="navbar-brand"><i class="glyphicon-cloud glyphicon"></i>OurEDA</a>
+            </div>
+            <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="http://upan.oureda.cn/" title="点击回到首页">首页</a> </li>
+                    <li><a href="~/Home/Introduce" title="如何在微云盘上传、下载、遇到问题怎么办？">相关介绍</a> </li>
+                    <li><a href="http://vteacher.oureda.net/" target="_blank" title="校内文件资源第一站">V-Teacher</a> </li>
+                </ul>
+            </nav>
+        </div>
     </div>
-    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
-      <ul class="nav navbar-nav navbar-right">
-        <li> <a href="http://upan.oureda.cn/">首页</a> </li>
-        <li> <a href="~/Home/Introduce">相关介绍</a> </li>
-        <li> <a href="~/Home/Question">常见问题</a> </li>
-      </ul>
-    </nav>
-  </div>
-</header>
 <div class="container">
 	<div class="jumbotron">
-      <h2>微云盘，极速无限分享！</h2>
-      <div style="font-size:18px;">
-          <p>　　不用再担心打印店的电脑有木马，不用再急着四处借U盘，不用在那儿苦苦看着文件10K/S的上传...</p>
-          <P>　　或许你吐槽过公邮、网盘肿么打开上传这么慢！要是有FTP的速度该过好？</P>
-          <p>　　咳咳，上机的时候有人管你借代码，用QQ一个一个的发过去？或者看到了好种子只能回去取移动硬盘？</p>
-          <p><img src="~/image/logo.gif">快来使用微云盘咩！可点击、可拖拽，四位下载码，云端神速上传下载....</p>
+      <h2>OurEDA微云盘 无限分享</h2>
+      <h3 style="text-align:right;"><small><i class="glyphicon glyphicon-tag"></i>用户指南、胡说点什么　　<i class="glyphicon glyphicon-time"></i>2014.10.25　　</small></h3>
+      <div style="font-size:14px;">
+        <p>2013年12月2日，OurEDA微云盘开始内测运行。<small>　　　前方高能，用户指南请点<a href="#hr">这里</a>。</small></p>
+        <p>从神秘的综合楼四楼的一台二手机箱，到后来的网络核心节点里的第一台戴尔服务器;从各种报Bug到后来的支持二维码扫描、拖拽上传，再到后来的分布式存储、反向代理、服务器集群，我们发现微云盘越做越大，当然这个跟知识树的繁茂生长不无关系，但是微云盘里面也是整个团队、或者说开发的几个成员的心血，尽管现在还会偶尔undefined。</p>
+        <p>微云盘最开始上线，尝试过运营宣传，那时候教学区侧边的小栅栏还没有封，也跟着贴过几张小广告，后来教务处还下了关于禁止在校内乱贴海报的通知。感谢很多老师、同学的捧场，最开始每天几十次访问量，到2013年12月18日访问量达到了458次，2014年9月6日达到了“历史最高峰”1365次。开发过程中很多同学也提供了很好的建议，最开始很挫，没办法显示进度，到实现上传进度条、md5校验，当然蛋疼的浏览器兼容还是没解决。</p>
+        <p style="text-indent:0em;"><img src="~/image/20141025.png" /></p>
+        <p>运营还未满周年，但是微云盘给了同学、给了我们这些开发者很多惊喜。不计流量、用码下载、拖拽上传、MD5校验、大文件上传、分享到人人...当我们看到老师上机用微云盘下发文档、看到打印店里根本不认识的同学在用微云盘下载资料、看到学生周知里面发的严肃通知、看到微云盘迭代了一版又一版，看到自己的最初的idea从纸上变成一款很健壮的产品，拿了奖，出了风头，很满足，大学期间能和最好的朋友们一起用一年的时间做出这样的一款产品，足矣。如果你也想加入我们的话，可以发邮件至lee@oureda.cn。</p>
+        <p>最后打个广告，自从FTP崩掉之后软件学院就没有了文件中心，OurEDA经过半年开发，推出了基于云存储的<a href="http://vteacher.oureda.net/" target="_blank" title="校内文件资源第一站">V-Teacher</a>，可以戳戳链接。</p>
       </div>
-      <hr />
-      <div class="container">
+      <hr id="hr">
+    <div style="font-size:16px;">
+        <h2>OurEDA微云盘 用户指南</h2>
+        <p>　　互传文件不计流量，10M/s均速，再也不用QQ传文件...</p>
+        <p>不用再担心打印店的电脑有木马，不用再急着四处借U盘，不用在那儿苦苦看着文件10K/S的上传...</p>
+        <p>　　或许你吐槽过公邮、网盘肿么打开上传这么慢！要是有FTP的速度该过好？</p>
+        <p>　　咳咳，上机的时候有人管你借代码，用QQ一个一个的发过去？或者看到了好种子只能回去取移动硬盘？</p>
+        <p><img src="~/image/logo.gif">快来使用微云盘咩！可点击、可拖拽，四位下载码，云端神速上传下载....</p>
+    </div>
+      <div class="container" style="font-size:16px;">
           <p>（¯﹃¯）为什么选择微云盘？</p>
-          <p>　　1.云端上传 & 下载，数据再也不怕丢失,不限制下载次数</p>
-          <p>　　2.四位提取码好好记，随时随地都可以下载</p>
-          <p>　　3.拖拽上传什么的真是太可爱了_(:з」∠)_</p>
-          <p>　　4.咳咳，写这个的程序猿是个萌锅锅我会乱说...电话：1366421XXXXX.</p>
+          <p>　　1.不计流量，均速10M/s，不服你咬我</p>
+          <p>　　2.云端上传 & 下载，数据再也不怕丢失,不限制下载次数</p>
+          <p>　　3.四位提取码好好记，随时随地都可以下载，还能分享到人人</p>
         <hr />
           <p>\(≧▽≦)/怎么使用微云盘呢？</p>
           <p>　　第一步，找到一个文件</p>
@@ -53,21 +65,22 @@
           <p>　　第四步，记住你的上传码，和你的小伙伴分享你上传的文件吧</p>
         <hr />
           <p>⊙﹏⊙有没有什么要注意的呢？</p>
-          <p>　　1.一定要记住提取码哦，文件默认存储一周，超过的话就会被清除</p>
-          <p>　　2.有时候服务器可能不是太灵敏，再上传一次就好了</p>
-          <p>　　3.云空间很贵的呢，所以大家没事不要来调戏微云盘啦</p>
-          <p>　　4.如果你发现输入码值后下载下来的不是自己的文件，好吧，恭喜你，这种情况的概率为一千万分之一</p>
-        <hr />
-          <p style="float:right;font-size:18px;">OurEDA 基础设施云部门<br />　　2013.11</p>
+          <p>　　1.一定要记住提取码</p>
+          <p>　　2.有时候服务器可能出去学挖掘机去了，再上传一次就好</p>
+          <p>　　3.如果你发现输入码值后下载下来的不是自己的文件，好吧，恭喜你，这种情况的概率为一千万分之一</p>
       </div>
     </div>
 </div>
-<footer class="myfooter">
-	<p><a href="http://www.oureda.cn/">OurEDA</a>　　Copyright-版权所有</p>
-    <adress>大连理工大学 · 国家示范性软件学院综合楼4层</adress>
-</footer>
-<script src="~/js/jquery-1.10.2.js"></script>
-<script src="~/js/bootstrap.min.js"></script>
+    <div class="myfooter">
+        <p>
+            <a href="http://www.oureda.cn/">OurEDA</a>　<small>Copyright © 2013-2014</small>
+            <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://"); document.write(unescape("%3Cspan id='cnzz_stat_icon_1000186673'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s22.cnzz.com/z_stat.php%3Fid%3D1000186673%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+        </p>
+        <address>大连理工大学 · 国家示范性软件学院综合楼4层</address>
+    </div>
+<script type="text/javascript" src="~/js/jquery-1.10.2.js"></script>
+<script type="text/javascript" src="~/js/bootstrap.min.js"></script>
+
 </body>
 </html>
 

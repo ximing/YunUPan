@@ -148,6 +148,24 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\WebApi\UploadController.cs" />
     <Compile Include="Controllers\WebApi\UploadProcess.cs" />
+    <Compile Include="db\Model.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="db\Model.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="db\Model.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="db\publicFile.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -256,6 +274,23 @@
     <Content Include="js\WebUploader\webuploader.withoutimage.js" />
     <Content Include="js\WebUploader\webuploader.withoutimage.min.js" />
     <Content Include="js\WebUploader\README.md" />
+    <EntityDeploy Include="db\Model.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="db\Model.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model.edmx</DependentUpon>
+      <LastGenOutput>Model.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="db\Model.edmx.diagram">
+      <DependentUpon>Model.edmx</DependentUpon>
+    </Content>
+    <Content Include="db\Model.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model.edmx</DependentUpon>
+      <LastGenOutput>Model.cs</LastGenOutput>
+    </Content>
     <None Include="Properties\PublishProfiles\Default Settings.pubxml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="image\logo.gif" />
@@ -310,6 +345,7 @@
     <Content Include="Views\Home\TestWebUploader.cshtml" />
     <Content Include="Views\Default1\Test.cshtml" />
     <Content Include="Views\Home\DownFileView.cshtml" />
+    <Content Include="Views\Home\Public.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

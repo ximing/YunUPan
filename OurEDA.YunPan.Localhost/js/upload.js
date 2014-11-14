@@ -81,9 +81,10 @@ jQuery(function () {
             $('#warning').html("上传遇到了怪怪的问题，再试试吧_(:з」∠)_");
         }
         else {
-
             $('#srenren').css("display", "inherit");
             $('#erweixiazai').css("display", "inherit");
+            $('#public').css("display", "inherit");
+            $('#public').attr('href', '/Home/AddPublic?randName=' + ret._raw)
         }
         $('#pp').attr('href', 'http://upan.oureda.cn/');
         $('input').attr('disabled', 'disabled');

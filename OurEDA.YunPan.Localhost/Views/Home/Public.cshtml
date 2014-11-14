@@ -1,85 +1,93 @@
 ﻿@model List<OurEDA.YunPan.Localhost.db.publicFile>
+           @using OurEDA.YunPan.Localhost.Until
 @{
     Layout = null;
 }
 
+
 <!doctype html>
 <html>
 <head>
-    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=10,IE=9" />
+    <meta name="renderer" content="webkit" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="baidu-site-verification" content="qV4HG09G0S" />
     <script src="~/Scripts/jquery-1.8.2.min.js"></script>
-    <script src="~/js/download.js"></script>
     <link href="~/css/bootstrap.min.css" type="text/css" rel="stylesheet">
     <link href="~/css/index.css" type="text/css" rel="stylesheet">
-    <!--<link href="http://1.oureda.sinaapp.com/chirs.css" type="text/css" rel="stylesheet">-->
+    <link href="~/css/style.css" type="text/css" rel="stylesheet">
     <title>OurEDA微云盘</title>
 </head>
 
 <body>
-    <header class="navbar-default" role="banner">
+    <div class="navbar-default header" role="banner">
         <div class="container">
             <div class="navbar-header">
-                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse"> <span class="sr-only">Click</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-                <a href="http://upan.oureda.cn/" class="navbar-brand"><i class="glyphicon-cloud glyphicon" style="font-size:24px;"></i>OurEDA</a>
+                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse"><span class="sr-only">Click</span> <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+                <a href="http://upan.oureda.cn/" class="navbar-brand"><i class="glyphicon-cloud glyphicon"></i>OurEDA</a>
             </div>
             <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
                 <ul class="nav navbar-nav navbar-right">
-                    <li> <a href="http://upan.oureda.cn/">首页</a> </li>
-                    <li> <a href="~/Home/Introduce">相关介绍</a> </li>
-                    <li> <a href="~/Home/Question">常见问题</a> </li>
+                    <li><a href="http://upan.oureda.cn/" title="点击回到首页">首页</a> </li>
+                    <li><a href="~/Home/Introduce" title="如何在微云盘上传、下载、遇到问题怎么办？">相关介绍</a> </li>
+                    <li><a href="~/Home/Public" title="看看大家最近分享了什么">微分享</a> </li>
+                    <li><a href="http://vteacher.oureda.net/" target="_blank" title="校内文件资源第一站">V-Teacher</a> </li>
                 </ul>
             </nav>
         </div>
-    </header>
+    </div>
     <div class="container">
         <div class="ad">
-            <img src="~/image/logo.gif" style="float:left; margin-right:5%;">
+            <img src="~/image/logo.gif" style="float: left; margin-right: 5%;">
             <div class="adword">
-                <p style="font-size:22px;">忘带U盘？怕中木马？互传文件传的好慢？</p>
-                <p style="font-size:20px;">随时上传，随地下载，短短四位，用提取码下载文件</p>
+                <p>上传后，点击‘分享为公开文件’，就会被分享到这里</p>
+                <p class="second-line">随时上传，随地下载，短短四位，用提取码下载文件</p>
             </div>
         </div>
         <div class="miniad">
-            <p style="font-size:1.5em;">忘带U盘？怕中木马？</p>
-            <p style="font-size:1.5em;">互传文件传的好慢？</p>
-            <p style="font-size:1.25em;">快来用微云盘！</p>
-            <p style="font-size:1.25em;">随时上传，随地下载，短短四位，用提取码下载文件</p>
-            <p style="font-size:1.25em;">移动版和平板电脑不支持哦，快快换成电脑吧！</p>
+            <p style="font-size: 1.5em;">忘带U盘？怕中木马？</p>
+            <p style="font-size: 1.5em;">互传文件传的好慢？</p>
         </div>
-        <div class="center" id="target_box">
-            <table class="table table-striped">
-                <thead>
+        <div >
+            <table class="table table-striped" style="text-align:center;">
+                <thead style="">
                     <tr>
-                        <th>提取码</th>
-                        <th>文件名</th>
-                        <th>文件大小</th>
-                        <th>下载次数</th>
-                        <th>操作</th>
-                        <th></th>
+                        <th style="color:black;text-align:center;">提取码</th>
+                        <th style="color:black;text-align:center;">文件名</th>
+                        <th style="color:black;text-align:center;">文件大小</th>
+                        <th style="color:black;text-align:center;">下载次数</th>
+                        <th style="color:black;text-align:center;">操作</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach (var item in Model)
                     {
                         <tr>
-                            <td>@item.RandName</td>
-                            <td>@item.Name</td>
-                            <td>@item.fileSize</td>
-                            <td>@item.DownCount</td>
-                            <td><a href="/Home/DownPublicFileByrandName?randName=@item.RandName"></a></td>
+                            <td style="color:black">@item.RandName</td>
+                            <td style="color:black;word-break:break-word;word-wrap: break-word;max-width: 300px;">@item.Name</td>
+                            <td style="color:black">@item.fileSize.Format_FileSize()</td>
+                            <td style="color:black">@item.DownCount</td>
+                            <td style="color:black"><a href="/Home/DownPublicFileByrandName?randName=@item.RandName">下载</a></td>
                         </tr>
                     }
-                   
+
                 </tbody>
             </table>
         </div>
     </div>
+    <div class="myfooter">
+        <p>
+            <a href="http://www.oureda.cn/">OurEDA</a>　<small>Copyright © 2013-2014</small>
+            <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://"); document.write(unescape("%3Cspan id='cnzz_stat_icon_1000186673'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s22.cnzz.com/z_stat.php%3Fid%3D1000186673%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+        </p>
+        <address>大连理工大学 · 国家示范性软件学院综合楼4层</address>
+    </div>
 
-    <footer class="myfooter">
-        <p><a href="http://www.oureda.cn/">OurEDA</a>　　Copyright-版权所有</p>
-        <adress>大连理工大学 · 国家示范性软件学院综合楼4层</adress>
-    </footer>
+
+    <script type="text/javascript" src="~/js/upload.js"></script>
+    <script type="text/javascript" src="http://widget.renren.com/js/rrshare.js"></script>
+    <script type="text/javascript" src="~/js/lee_checkBroswer.js"></script>
 </body>
+
 </html>

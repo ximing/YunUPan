@@ -48,6 +48,7 @@ namespace MvcWebRole1.Controllers
                 Response.Redirect("DownFileView");
                 return;
             }
+            randName = randName.Trim();
             var database = server.GetDatabase("test");
             var downcollection = database.GetCollection<FileStore>("filestores");
             var fileinfo = downcollection.FindOne(Query.EQ("RandName", randName));
@@ -84,6 +85,7 @@ namespace MvcWebRole1.Controllers
             }
         }
 
+        [AntiOutSiteLink]
         public void DownPublicFileByrandName(string randName)
         {
             if (string.IsNullOrEmpty(randName))
@@ -100,6 +102,17 @@ namespace MvcWebRole1.Controllers
                 TempData["error"] = "提取码不存在";
                 Response.Redirect("Public");
                 return;
+            }
+            using (OurEDA.YunPan.Localhost.db.YunPanEntities db = new OurEDA.YunPan.Localhost.db.YunPanEntities())
+            {
+                var file=db.publicFiles.FirstOrDefault(a => a.RandName == randName);
+                if (file!=null)
+                {
+                    file.LikeCount += 1;
+                    file.DownCount += 1;
+                    db.Entry(file).State = System.Data.Entity.EntityState.Modified;
+                    db.SaveChanges();
+                }
             }
             System.IO.FileInfo fileInfo = new System.IO.FileInfo(fileinfo.FileUrl);
             if (fileInfo.Exists == true)
@@ -167,7 +180,7 @@ namespace MvcWebRole1.Controllers
         {
             using (OurEDA.YunPan.Localhost.db.YunPanEntities db = new OurEDA.YunPan.Localhost.db.YunPanEntities())
             {
-                return View(db.publicFiles.ToList());
+                return View(db.publicFiles.OrderByDescending(a=>a.DownCount).ToList());
             }
         }
 

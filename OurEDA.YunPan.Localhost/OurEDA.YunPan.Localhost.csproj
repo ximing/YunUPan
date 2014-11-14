@@ -176,6 +176,8 @@
     <Compile Include="Models\Note.cs" />
     <Compile Include="Models\YunPanEntities.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Until\AntiOutSiteLinkAttribute.cs" />
+    <Compile Include="Until\Format.cs" />
     <Compile Include="Until\IpHelper.cs" />
   </ItemGroup>
   <ItemGroup>

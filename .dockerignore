@@ -1,0 +1,13 @@
+.git
+**/.DS_Store
+**/node_modules
+.env
+**/.env
+packages
+OurEDA.YunPan.Localhost/123
+OurEDA.YunPan.Localhost/Upload
+**/*.nupkg
+**/*.pdf
+**/*.zip
+**/*.rar
+**/*.doc

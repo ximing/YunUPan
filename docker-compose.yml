@@ -1,0 +1,10 @@
+services:
+  upan:
+    image: upan:latest
+    pull_policy: never
+    container_name: upan
+    restart: unless-stopped
+    ports:
+      - "13016:3010"
+    env_file:
+      - .env

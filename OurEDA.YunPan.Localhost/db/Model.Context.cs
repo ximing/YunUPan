@@ -18,7 +18,7 @@ namespace OurEDA.YunPan.Localhost.db
         public YunPanEntities()
             : base("name=YunPanEntities")
         {
-            this.Database.Connection.ConnectionString = "data source=210.30.100.181;initial catalog=YunPan;user id=sa;password=REDACTED;";
+            this.Database.Connection.ConnectionString = "data source=210.30.100.181;initial catalog=YunPan;user id=sa;password=;";
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

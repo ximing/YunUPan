@@ -34,6 +34,7 @@ export function renderView(name, { error = '', randName = '', publicFiles = null
     ? path.join(viewsDir, `${name}.cshtml`)
     : path.join(viewsDir, 'Home', `${name}.cshtml`);
   let html = fs.readFileSync(file, 'utf8');
+  if (html.charCodeAt(0) === 0xfeff) html = html.slice(1);
   html = html.replace(/@\*[\s\S]*?\*@/g, '');
   html = stripAtBlocks(html);
   html = html.replace(/^[\t ]*@model[^\n]*\n/gm, '');

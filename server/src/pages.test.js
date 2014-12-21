@@ -25,6 +25,15 @@ test('home page stays the original uploader', () => {
   assert.doesNotMatch(html, /@model|@\{|@\*/);
 });
 
+test('rendered pages do not leak razor', () => {
+  for (const name of ['Index', 'DownFileView', 'Introduce', 'Question', 'Inform', 'Fdownload', 'TextIndex', 'BigIndex']) {
+    const html = renderView(name);
+    assert.doesNotMatch(html, /@model|@using|@foreach|@TempData|~\//, name);
+  }
+  const pub = renderView('Public', { publicFiles: [] });
+  assert.doesNotMatch(pub, /@model|@using|@foreach|@TempData|~\//);
+});
+
 test('download page shows the extraction error', () => {
   const html = renderView('DownFileView', { error: '提取码不存在', randName: 'ab12' });
   assert.match(html, /提取码不存在/);

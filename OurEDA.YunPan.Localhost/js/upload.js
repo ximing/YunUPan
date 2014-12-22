@@ -86,7 +86,7 @@ jQuery(function () {
             $('#public').css("display", "inherit");
             $('#public').attr('href', '/Home/AddPublic?randName=' + ret._raw)
         }
-        $('#pp').attr('href', 'http://upan.oureda.cn/');
+        $('#pp').attr('href', 'https://upan.aimo.plus/');
         $('input').attr('disabled', 'disabled');
 
     });

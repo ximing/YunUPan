@@ -22,6 +22,8 @@ test('home page stays the original uploader', () => {
   assert.match(html, /选择文件/);
   assert.match(html, /src="\/js\/upload\.js"/);
   assert.match(html, /href="\/Home\/DownFileView"/);
+  assert.match(html, /href="https:\/\/upan\.aimo\.plus\/"/);
+  assert.doesNotMatch(html, /upan\.oureda\.cn/);
   assert.doesNotMatch(html, /@model|@\{|@\*/);
 });
 

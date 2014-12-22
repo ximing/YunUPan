@@ -353,7 +353,7 @@ namespace MvcWebRole1.Controllers
                     {
                         if (tempip.Count > 100)
                         {
-                            HttpContext.Response.Redirect("http://upan.oureda.cn/Home/Question", true);
+                            HttpContext.Response.Redirect("https://upan.aimo.plus/Home/Question", true);
                             return null;
                         }
                         else
@@ -365,14 +365,14 @@ namespace MvcWebRole1.Controllers
             }
             else
             {
-                HttpContext.Response.Redirect("http://upan.oureda.cn/Home/Question", true);
+                HttpContext.Response.Redirect("https://upan.aimo.plus/Home/Question", true);
                 return null;
             }
             var downcollection = database.GetCollection<FileStore>("filestores");
             var fileinfo = downcollection.FindOne(Query.EQ("RandName", randName));
             if (fileinfo == null)
             {
-                Response.RedirectLocation = "http://upan.oureda.cn/Home/Inform";
+                Response.RedirectLocation = "https://upan.aimo.plus/Home/Inform";
                 Response.StatusCode = (int)HttpStatusCode.RedirectMethod;
                 TempData["randName"] = randName;
                 return null;
@@ -388,7 +388,7 @@ namespace MvcWebRole1.Controllers
             //    }
             //    finally
             //    {
-            //        Response.RedirectLocation = "http://upan.oureda.cn/Home/Inform";
+            //        Response.RedirectLocation = "https://upan.aimo.plus/Home/Inform";
             //        Response.StatusCode = (int)HttpStatusCode.RedirectMethod;
             //        TempData["randName"] = randName;
             //        db.SaveChanges();
@@ -423,7 +423,7 @@ namespace MvcWebRole1.Controllers
                     string s1 = BitConverter.ToString(gbk);
                     s1 = "%" + s1.Replace('-', '%');
                     string path = v[v.Length - 2] + "/" + s1;
-                    string fullpath = "http://upan.oureda.cn/file/" + path;
+                    string fullpath = "https://upan.aimo.plus/file/" + path;
                     return fullpath;
                 }
                 else
@@ -440,7 +440,7 @@ namespace MvcWebRole1.Controllers
             var fileinfo = downcollection.FindOne(Query.EQ("RandName", randName));
             if (fileinfo == null)
             {
-                Response.RedirectLocation = "http://upan.oureda.cn/Home/Inform";
+                Response.RedirectLocation = "https://upan.aimo.plus/Home/Inform";
                 Response.StatusCode = (int)HttpStatusCode.RedirectMethod;
                 TempData["randName"] = randName;
                 //TempData["success"] = "文件好像找不到了，再确认一下提取码呢?";
@@ -580,7 +580,7 @@ namespace MvcWebRole1.Controllers
             {
                 var v = fileinfo.FileUrl.Split('\\');
                 string path = v[v.Length - 2] + "/" + v[v.Length - 1];
-                string fullpath = "http://upan.oureda.cn/file/" + path;
+                string fullpath = "https://upan.aimo.plus/file/" + path;
                 return fullpath;
             }
         }

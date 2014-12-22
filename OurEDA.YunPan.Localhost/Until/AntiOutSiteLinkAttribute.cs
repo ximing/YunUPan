@@ -54,7 +54,7 @@ public class AntiOutSiteLinkAttribute : ActionFilterAttribute, IActionFilter
             }
 
         }
-        filterContext.Result = new RedirectResult("http://upan.oureda.cn/Home/Public");
+        filterContext.Result = new RedirectResult("https://upan.aimo.plus/Home/Public");
 
     }
 
